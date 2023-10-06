@@ -1,4 +1,11 @@
 <RCC>
-    <qresource prefix="QT_Mark">
+    <qresource prefix="/QT_Mark"/>
+    <qresource prefix="/icon">
+        <file>icon/save.ico</file>
+        <file>icon/new_file.ico</file>
+        <file>icon/open_file.ico</file>
+        <file>icon/undo.ico</file>
+        <file>icon/next.ico</file>
+        <file>icon/camera.ico</file>
     </qresource>
 </RCC>

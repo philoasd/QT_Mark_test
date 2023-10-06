@@ -4,7 +4,7 @@ QT_Mark::QT_Mark(QWidget* parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
-
+	ui.toolBar_Shape->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 	//连接信号和槽
 	{
 		//connect(ui.pushButton, &QPushButton::clicked, this, &QT_Mark::Test);
