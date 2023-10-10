@@ -4,13 +4,14 @@ QT_Mark::QT_Mark(QWidget* parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
-	ui.toolBar_Shape->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+
 	//连接信号和槽
 	{
 		//connect(ui.pushButton, &QPushButton::clicked, this, &QT_Mark::Test);
 	}
 
 	m_Camera = new BaslerCamera();
+	Test();
 }
 
 QT_Mark::~QT_Mark()
@@ -27,7 +28,9 @@ void QT_Mark::ShowImage(const CGrabResultPtr& ptrGrabResult)
 {
 	if (ptrGrabResult->GrabSucceeded())
 	{
-
+		QImage img = ImageConvert::ConvertToQImage(ptrGrabResult);
+		ui.label_ShowImage->setPixmap(QPixmap::fromImage(img).scaled(ui.label_ShowImage->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+		img.save("test.bmp");
 	}
 }
 
@@ -49,7 +52,7 @@ void QT_Mark::Test()
 		if (m_ImageEventHandler != nullptr)
 
 			m_ImageEventHandler = nullptr;
-			delete m_ImageEventHandler;
+		delete m_ImageEventHandler;
 	}
 
 	m_Camera->DisConnectedCamera();

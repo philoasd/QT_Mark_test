@@ -3,6 +3,7 @@
 #include <QtWidgets/QMainWindow>
 #include "ui_QT_Mark.h"
 #include <BaslerCamera.h>
+#include "ImageConvert.h"
 #include <thread>
 #include <chrono>
 
