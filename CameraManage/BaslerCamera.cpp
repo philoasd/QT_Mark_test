@@ -23,7 +23,7 @@ vector<string> BaslerCamera::GetCameraDevices()
 
 void BaslerCamera::ConnectedCamera(int serialNumber)
 {
-	if (serialNumber >= 0)
+	if (serialNumber >= 0 && Devices.size() > 0)
 	{
 		// 连接相机
 		Camera.Attach(CTlFactory::GetInstance().CreateDevice(Devices[serialNumber]));
