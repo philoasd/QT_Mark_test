@@ -29,6 +29,10 @@ void BaslerCamera::ConnectedCamera(int serialNumber)
 		Camera.Attach(CTlFactory::GetInstance().CreateDevice(Devices[serialNumber]));
 		IsInitCamera = true;
 	}
+	else
+	{
+		IsInitCamera = false;
+	}
 }
 
 void BaslerCamera::RegisterImageEvent(ImageEventHandler *imageEventHandler)
