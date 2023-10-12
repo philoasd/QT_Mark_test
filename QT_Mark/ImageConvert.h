@@ -13,6 +13,5 @@ public:
 	/// </summary>
 	/// <param name="ptrGrabResult"></param>
 	/// <returns></returns>
-	static QImage ConvertToQImage(const CGrabResultPtr& ptrGrabResult);
+	static QImage ConvertToQImage(const CGrabResultPtr &ptrGrabResult);
 };
-

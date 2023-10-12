@@ -23,29 +23,39 @@ vector<string> BaslerCamera::GetCameraDevices()
 
 void BaslerCamera::ConnectedCamera(int serialNumber)
 {
-	if (serialNumber >= 0) {
+	if (serialNumber >= 0)
+	{
 		// 连接相机
 		Camera.Attach(CTlFactory::GetInstance().CreateDevice(Devices[serialNumber]));
 		IsInitCamera = true;
 	}
 }
 
-void BaslerCamera::RegisterImageEvent(ImageEventHandler* imageEventHandler)
+void BaslerCamera::RegisterImageEvent(ImageEventHandler *imageEventHandler)
 {
-	if (!IsInitCamera) { return; }
+	if (!IsInitCamera)
+	{
+		return;
+	}
 	Camera.RegisterImageEventHandler(imageEventHandler, RegistrationMode_Append, Cleanup_Delete);
 	Camera.GrabCameraEvents = true;
 }
 
-void BaslerCamera::DeregisterImageEvent(ImageEventHandler* imageEventHandler)
+void BaslerCamera::DeregisterImageEvent(ImageEventHandler *imageEventHandler)
 {
-	if (!IsInitCamera) { return; }
+	if (!IsInitCamera)
+	{
+		return;
+	}
 	Camera.DeregisterImageEventHandler(imageEventHandler);
 }
 
 void BaslerCamera::DisConnectedCamera()
 {
-	if (!IsInitCamera) { return; }
+	if (!IsInitCamera)
+	{
+		return;
+	}
 	if (Camera.IsGrabbing())
 	{
 		Camera.StopGrabbing();
@@ -58,7 +68,10 @@ void BaslerCamera::DisConnectedCamera()
 
 void BaslerCamera::StartCapture(int flag)
 {
-	if (!IsInitCamera) { return; }
+	if (!IsInitCamera)
+	{
+		return;
+	}
 	if (!Camera.IsOpen())
 	{
 		Camera.Open();
@@ -80,12 +93,18 @@ void BaslerCamera::StartCapture(int flag)
 
 void BaslerCamera::StopCapture()
 {
-	if (!IsInitCamera) { return; }
+	if (!IsInitCamera)
+	{
+		return;
+	}
 	Camera.StopGrabbing();
 }
 
-void BaslerCamera::SaveImage(const string& path, const CGrabResultPtr& ptrGrabResult)
+void BaslerCamera::SaveImage(const string &path, const CGrabResultPtr &ptrGrabResult)
 {
-	if (!IsInitCamera) { return; }
+	if (!IsInitCamera)
+	{
+		return;
+	}
 	CImagePersistence::Save(ImageFileFormat_Bmp, path.c_str(), ptrGrabResult);
 }

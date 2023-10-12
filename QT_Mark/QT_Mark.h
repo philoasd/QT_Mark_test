@@ -14,8 +14,9 @@ class QT_Mark : public QMainWindow
 	Q_OBJECT
 
 public:
-	QT_Mark(QWidget* parent = nullptr);
+	QT_Mark(QWidget *parent = nullptr);
 	~QT_Mark();
+
 private:
 	/// <summary>
 	/// 获取相机设备
@@ -36,7 +37,7 @@ private:
 	/// 显示图像
 	/// </summary>
 	/// <param name="ptrGrabResult">Basler图像原始数据</param>
-	void ShowImage(const CGrabResultPtr& ptrGrabResult);
+	void ShowImage(const CGrabResultPtr &ptrGrabResult);
 
 	/// <summary>
 	/// 连接相机
@@ -52,8 +53,8 @@ private slots:
 
 private:
 	Ui::QT_MarkClass ui;
-	BaslerCamera* m_Camera = nullptr; // 相机对象
-	ImageEventHandler::ImageCallback callback; // 图像回调函数
-	ImageEventHandler* m_ImageEventHandler = nullptr; // 图像回调对象
-	QTimer* timer; // 系统时间
+	BaslerCamera *m_Camera = nullptr;				  // 相机对象
+	ImageEventHandler::ImageCallback callback;		  // 图像回调函数
+	ImageEventHandler *m_ImageEventHandler = nullptr; // 图像回调对象
+	QTimer *timer;									  // 系统时间
 };
