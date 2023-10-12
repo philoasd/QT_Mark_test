@@ -7,5 +7,9 @@
         <file>icon/undo.ico</file>
         <file>icon/next.ico</file>
         <file>icon/camera.ico</file>
+        <file>icon/Laser.ico</file>
+        <file>icon/grab_once.ico</file>
+        <file>icon/grab_stop.ico</file>
+        <file>icon/grab_continue.ico</file>
     </qresource>
 </RCC>
