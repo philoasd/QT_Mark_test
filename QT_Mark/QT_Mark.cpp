@@ -36,8 +36,7 @@ void QT_Mark::InitControl()
 
 void QT_Mark::InitConnect()
 {
-	// mark界面和图像界面的切换
-	{
+#pragma region mark界面和图像界面的切换
 		connect(ui.actionMark, &QAction::triggered, this, [&]()
 				{
 					ui.stackedWidget->setCurrentIndex(0);
@@ -59,19 +58,17 @@ void QT_Mark::InitConnect()
 			ui.toolBar_Shape->setVisible(false);// 隐藏mark界面的工具栏
 			InitCameraDevices();
 			ConnectedCamera(); });
-	}
+#pragma endregion
 
-	// 状态栏的操作
-	{
+#pragma region 状态栏的操作
 		connect(timer, &QTimer::timeout, this, [&]()
 				{
 					ui.statusBar->findChild<QLabel *>()->setText(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss ddd")); // 设置状态栏的时间
 				});
 		timer->start(1000);
-	}
+#pragma endregion
 
-	// 图像界面的操作
-	{
+#pragma region 图像界面的操作
 		// 连续取图
 		connect(ui.actionGrabContinue, &QAction::triggered, this, [&]()
 				{
@@ -91,7 +88,7 @@ void QT_Mark::InitConnect()
 					ui.actionGrabOnce->setEnabled(true);	 // 单次取图按钮可用
 					ui.actionGrabStop->setEnabled(false);	 // 停止取图按钮不可用
 				});
-	}
+#pragma endregion
 }
 
 void QT_Mark::ShowImage(const CGrabResultPtr &ptrGrabResult)

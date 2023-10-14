@@ -2,6 +2,13 @@
 
 QImage ImageConvert::ConvertToQImage(const CGrabResultPtr& ptrGrabResult)
 {
-    QImage img((uchar*)ptrGrabResult->GetBuffer(), ptrGrabResult->GetWidth(), ptrGrabResult->GetHeight(), QImage::Format_Grayscale8);
-    return img;
+	QImage img((uchar*)ptrGrabResult->GetBuffer(), ptrGrabResult->GetWidth(), ptrGrabResult->GetHeight(), QImage::Format_Grayscale8);
+	return img;
+}
+
+CProImage ImageConvert::ConvertToCProImage(const CGrabResultPtr& ptrGrabResult)
+{
+	CProImage img;
+	img.Set(ptrGrabResult->GetWidth(), ptrGrabResult->GetHeight(), CProData::FormatUByte, ptrGrabResult->GetBuffer());
+	return img;
 }

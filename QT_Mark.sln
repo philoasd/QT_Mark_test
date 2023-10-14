@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QT_Mark", "QT_Mark\QT_Mark.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CameraManage", "CameraManage\CameraManage.vcxproj", "{AC673CCE-F9F7-419E-8253-A79CB055C477}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ImageLibrary", "ImageLibrary\ImageLibrary.vcxproj", "{A1C8EFE5-4F6A-430A-BEC2-6ECED692BBF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{AC673CCE-F9F7-419E-8253-A79CB055C477}.Release|x64.Build.0 = Release|x64
 		{AC673CCE-F9F7-419E-8253-A79CB055C477}.Release|x86.ActiveCfg = Release|Win32
 		{AC673CCE-F9F7-419E-8253-A79CB055C477}.Release|x86.Build.0 = Release|Win32
+		{A1C8EFE5-4F6A-430A-BEC2-6ECED692BBF4}.Debug|x64.ActiveCfg = Debug|x64
+		{A1C8EFE5-4F6A-430A-BEC2-6ECED692BBF4}.Debug|x64.Build.0 = Debug|x64
+		{A1C8EFE5-4F6A-430A-BEC2-6ECED692BBF4}.Debug|x86.ActiveCfg = Debug|Win32
+		{A1C8EFE5-4F6A-430A-BEC2-6ECED692BBF4}.Debug|x86.Build.0 = Debug|Win32
+		{A1C8EFE5-4F6A-430A-BEC2-6ECED692BBF4}.Release|x64.ActiveCfg = Release|x64
+		{A1C8EFE5-4F6A-430A-BEC2-6ECED692BBF4}.Release|x64.Build.0 = Release|x64
+		{A1C8EFE5-4F6A-430A-BEC2-6ECED692BBF4}.Release|x86.ActiveCfg = Release|Win32
+		{A1C8EFE5-4F6A-430A-BEC2-6ECED692BBF4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
