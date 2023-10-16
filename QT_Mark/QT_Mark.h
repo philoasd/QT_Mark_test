@@ -61,4 +61,5 @@ private:
 	ImageEventHandler::ImageCallback callback;		  // 图像回调函数
 	ImageEventHandler *m_ImageEventHandler = nullptr; // 图像回调对象
 	QTimer *timer;									  // 系统时间
+	DalsaLibrary *m_ImageProcess = nullptr;			  // 图像处理对象
 };
