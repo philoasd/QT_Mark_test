@@ -2,6 +2,7 @@
 #include <QImage>
 #include <pylon/PylonIncludes.h>
 #include <CPro.h>
+#include <opencv2/opencv.hpp>
 
 /// <summary>
 /// 图像转换类
@@ -22,4 +23,11 @@ public:
 	/// <param name="ptrGrabResult"></param>
 	/// <returns></returns>
 	static CProImage ConvertToCProImage(const Pylon::CGrabResultPtr& ptrGrabResult);
+
+	/// <summary>
+	/// 将OpenCV图像转换为QImage
+	/// </summary>
+	/// <param name="mat"></param>
+	/// <returns></returns>
+	static QImage ConvertMatToQImage(const cv::Mat& mat);
 };
