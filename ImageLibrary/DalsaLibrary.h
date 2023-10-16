@@ -25,6 +25,11 @@ public:
 	/// <param name="minRotation"></param>
 	/// <param name="search"></param>
 	void SetMinRotation(double minRotation, CProSearchEdge& search);
+	/// <summary>
+	/// 获取最小旋转角度
+	/// </summary>
+	/// <param name="search"></param>
+	/// <returns></returns>
 	double GetMinRotation(CProSearchEdge& search) const;
 
 	/// <summary>
@@ -33,6 +38,11 @@ public:
 	/// <param name="maxRotation"></param>
 	/// <param name="search"></param>
 	void SetMaxRotation(double maxRotation, CProSearchEdge& search);
+	/// <summary>
+	/// 获取最大旋转角度
+	/// </summary>
+	/// <param name="search"></param>
+	/// <returns></returns>
 	double GetMaxRotation(CProSearchEdge& search) const;
 
 	/// <summary>
@@ -41,6 +51,11 @@ public:
 	/// <param name="minScale"></param>
 	/// <param name="search"></param>
 	void SetMinScale(double minScale, CProSearchEdge& search);
+	/// <summary>
+	/// 获取最小尺度
+	/// </summary>
+	/// <param name="search"></param>
+	/// <returns></returns>
 	double GetMinScale(CProSearchEdge& search) const;
 
 	/// <summary>
@@ -49,6 +64,11 @@ public:
 	/// <param name="maxScale"></param>
 	/// <param name="search"></param>
 	void SetMaxScale(double maxScale, CProSearchEdge& search);
+	/// <summary>
+	/// 获取最大尺度
+	/// </summary>
+	/// <param name="search"></param>
+	/// <returns></returns>
 	double GetMaxScale(CProSearchEdge& search) const;
 
 	/// <summary>
@@ -57,6 +77,11 @@ public:
 	/// <param name="minScore"></param>
 	/// <param name="search"></param>
 	void SetMinScore(double minScore, CProSearchEdge& search);
+	/// <summary>
+	/// 获取最小得分
+	/// </summary>
+	/// <param name="search"></param>
+	/// <returns></returns>
 	double GetMinScore(CProSearchEdge& search) const;
 
 	/// <summary>

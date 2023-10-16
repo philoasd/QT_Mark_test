@@ -151,12 +151,14 @@
     <ClInclude Include="DalsaLibrary.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MatroxLibrary.h" />
+    <ClInclude Include="OpenCVLibrary.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DalsaLibrary.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="MatroxLibrary.cpp" />
+    <ClCompile Include="OpenCVLibrary.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

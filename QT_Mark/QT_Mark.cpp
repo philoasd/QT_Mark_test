@@ -40,25 +40,29 @@ void QT_Mark::InitConnect()
 #pragma region mark界面和图像界面的切换
 	connect(ui.actionMark, &QAction::triggered, this, [&]()
 		{
-			ui.stackedWidget->setCurrentIndex(0);
+			ui.stackedWidget->setCurrentIndex(0);	// 设置当前显示的页面为第一个页面
 			ui.actionMark->setVisible(false);	  // 隐藏mark界面的菜单栏
 			ui.actionVision->setVisible(true);	  // 显示图像界面的菜单栏
 			ui.toolBar_Vision->setVisible(false); // 隐藏图像界面的工具栏
 			ui.toolBar_Shape->setVisible(true);	  // 显示mark界面的工具栏
-			DisconnectedCamera();
+
+			DisconnectedCamera(); // 断开相机
 			ui.actionGrabContinue->setEnabled(true); // 连续取图按钮可用
 			ui.actionGrabOnce->setEnabled(true);	 // 单次取图按钮可用
 			ui.actionGrabStop->setEnabled(false);	 // 停止取图按钮不可用
+			ui.label_ShowImage->clear();			 // 清空图像显示
 		});
 	connect(ui.actionVision, &QAction::triggered, this, [&]()
 		{
-			ui.stackedWidget->setCurrentIndex(1);
+			ui.stackedWidget->setCurrentIndex(1);	// 设置当前显示的页面为第二个页面
 			ui.actionVision->setVisible(false);// 隐藏图像界面的菜单栏
 			ui.actionMark->setVisible(true);// 显示mark界面的菜单栏
 			ui.toolBar_Vision->setVisible(true);// 显示图像界面的工具栏
 			ui.toolBar_Shape->setVisible(false);// 隐藏mark界面的工具栏
 			InitCameraDevices();
-			ConnectedCamera(); });
+			ConnectedCamera(); // 连接相机
+			ui.actionGrabOnce->triggered(); // 单次取图
+		});
 #pragma endregion
 
 #pragma region 状态栏的操作
