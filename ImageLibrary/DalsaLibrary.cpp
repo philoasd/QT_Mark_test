@@ -2,7 +2,7 @@
 #include "DalsaLibrary.h"
 
 #pragma region Search edge
-void DalsaLibrary::TrainModel(CProImage& img, CProRect rect, std::string modelName, CProSearchEdge& search)
+void DalsaLibrary::TrainModel(CProImage& img, CProRect& rect, std::string& modelName, CProSearchEdge& search)
 {
 	// 复制一份，避免修改原图
 	CProImage tmpImage;

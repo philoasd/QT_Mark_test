@@ -7,6 +7,7 @@
 #include <DalsaLibrary.h>
 
 #include "ImageConvert.h"
+#include "ImageProcessInterface.h"
 #include <thread>
 #include <chrono>
 #include <qtimer.h>

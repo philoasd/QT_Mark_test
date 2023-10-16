@@ -14,8 +14,10 @@ public:
 	/// 训练模板
 	/// </summary>
 	/// <param name="img"></param>
+	/// <param name="rect"></param>
+	/// <param name="modelName"></param>
 	/// <param name="search"></param>
-	void TrainModel(CProImage& img, CProRect rect, std::string modelName, CProSearchEdge& search);
+	void TrainModel(CProImage& img, CProRect& rect, std::string& modelName, CProSearchEdge& search);
 
 	/// <summary>
 	/// 设置最小旋转角度

@@ -217,6 +217,7 @@
    <addaction name="actionGrabContinue"/>
    <addaction name="actionGrabOnce"/>
    <addaction name="actionGrabStop"/>
+   <addaction name="actionImageProcessInterface"/>
   </widget>
   <action name="actionNew">
    <property name="text">
@@ -361,6 +362,18 @@
    </property>
    <property name="toolTip">
     <string>Continue grab the image</string>
+   </property>
+  </action>
+  <action name="actionImageProcessInterface">
+   <property name="icon">
+    <iconset resource="QT_Mark.qrc">
+     <normaloff>:/icon/icon/image_process.ico</normaloff>:/icon/icon/image_process.ico</iconset>
+   </property>
+   <property name="text">
+    <string>ImageProcessInterface</string>
+   </property>
+   <property name="toolTip">
+    <string>Open the image process interface</string>
    </property>
   </action>
  </widget>

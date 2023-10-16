@@ -113,9 +113,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <QtRcc Include="QT_Mark.qrc" />
+    <QtUic Include="ImageProcessInterface.ui" />
     <QtUic Include="QT_Mark.ui" />
     <QtMoc Include="QT_Mark.h" />
     <ClCompile Include="ImageConvert.cpp" />
+    <ClCompile Include="ImageProcessInterface.cpp" />
     <ClCompile Include="QT_Mark.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -124,6 +126,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ImageConvert.h" />
+    <QtMoc Include="ImageProcessInterface.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="QT_Mark.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

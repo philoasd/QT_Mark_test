@@ -11,5 +11,6 @@
         <file>icon/grab_once.ico</file>
         <file>icon/grab_stop.ico</file>
         <file>icon/grab_continue.ico</file>
+        <file>icon/image_process.ico</file>
     </qresource>
 </RCC>
