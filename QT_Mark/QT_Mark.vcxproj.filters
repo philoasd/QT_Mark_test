@@ -24,6 +24,9 @@
     <Filter Include="ControlBeauty">
       <UniqueIdentifier>{59cd59ff-756c-4f3f-9e03-6ab238e4feaa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ControlBeauty\Slider">
+      <UniqueIdentifier>{ee8669fc-76fe-4d59-8cdf-ca39dda262ab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="QT_Mark.qrc">
@@ -50,7 +53,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="QxtSpanSlider.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>ControlBeauty\Slider</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -77,10 +80,10 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="QxtSpanSlider.h">
-      <Filter>Header Files</Filter>
+      <Filter>ControlBeauty\Slider</Filter>
     </QtMoc>
     <QtMoc Include="QxtSpanSlider_p.h">
-      <Filter>Header Files</Filter>
+      <Filter>ControlBeauty\Slider</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

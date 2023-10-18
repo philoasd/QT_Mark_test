@@ -31,18 +31,54 @@
         <attribute name="title">
          <string>Tab 1</string>
         </attribute>
-        <widget class="QxtSpanSlider" name="horizontalSlider_Threshold">
+        <widget class="QWidget" name="">
          <property name="geometry">
           <rect>
-           <x>40</x>
-           <y>80</y>
-           <width>160</width>
-           <height>22</height>
+           <x>30</x>
+           <y>50</y>
+           <width>201</width>
+           <height>41</height>
           </rect>
          </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="2,0,2">
+          <item>
+           <widget class="QSpinBox" name="spinBox_leftThreshold">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>255</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QxtSpanSlider" name="horizontalSlider_Threshold">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spinBox_rightThreshold">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>255</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </widget>
        <widget class="QWidget" name="tab_Calibration">
