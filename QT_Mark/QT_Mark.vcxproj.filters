@@ -21,6 +21,9 @@
       <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
       <Extensions>ts</Extensions>
     </Filter>
+    <Filter Include="ControlBeauty">
+      <UniqueIdentifier>{59cd59ff-756c-4f3f-9e03-6ab238e4feaa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="QT_Mark.qrc">
@@ -46,6 +49,9 @@
     <ClCompile Include="ImageProcessInterface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="QxtSpanSlider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
@@ -68,6 +74,12 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="ImageProcessInterface.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="QxtSpanSlider.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="QxtSpanSlider_p.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

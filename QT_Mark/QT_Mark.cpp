@@ -6,6 +6,7 @@ QT_Mark::QT_Mark(QWidget* parent)
 	ui.setupUi(this);
 	InitControl();
 	InitConnect();
+	m_ImageProcess = new MatroxLibrary();
 }
 
 QT_Mark::~QT_Mark()
@@ -133,4 +134,9 @@ void QT_Mark::DisconnectedCamera()
 		delete m_ImageEventHandler;
 	}
 	delete m_Camera;
+}
+
+void QT_Mark::InitImageProcessLibrary()
+{
+	m_ImageProcess = new MatroxLibrary();
 }

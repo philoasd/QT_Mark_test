@@ -30,6 +30,7 @@ public:
 	~QT_Mark();
 
 private:
+#pragma region 相机操作
 	/// <summary>
 	/// 获取相机设备
 	/// </summary>
@@ -60,6 +61,14 @@ private:
 	/// 断开相机连接
 	/// </summary>
 	void DisconnectedCamera();
+#pragma endregion
+
+#pragma region 图像处理
+	/// <summary>
+	/// 初始化图像处理库
+	/// </summary>
+	void InitImageProcessLibrary();
+#pragma endregion
 
 private slots:
 

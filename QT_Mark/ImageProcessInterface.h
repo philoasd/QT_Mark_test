@@ -2,6 +2,7 @@
 
 #include <QWidget>
 #include "ui_ImageProcessInterface.h"
+#include "QxtSpanSlider.h"
 
 #include <vector>
 

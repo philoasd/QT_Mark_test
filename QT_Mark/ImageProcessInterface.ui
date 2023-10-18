@@ -27,22 +27,35 @@
        <property name="currentIndex">
         <number>0</number>
        </property>
-       <widget class="QWidget" name="tab_Processing">
+       <widget class="QWidget" name="tab_ImagePreprocessing">
         <attribute name="title">
          <string>Tab 1</string>
         </attribute>
+        <widget class="QxtSpanSlider" name="horizontalSlider_Threshold">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>80</y>
+           <width>160</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
        </widget>
-       <widget class="QWidget" name="tab_2">
+       <widget class="QWidget" name="tab_Calibration">
         <attribute name="title">
          <string>Tab 2</string>
         </attribute>
        </widget>
-       <widget class="QWidget" name="tab">
+       <widget class="QWidget" name="tab_EdgeSearch">
         <attribute name="title">
          <string>Page</string>
         </attribute>
        </widget>
-       <widget class="QWidget" name="tab_3">
+       <widget class="QWidget" name="tab_Blob">
         <attribute name="title">
          <string>Page</string>
         </attribute>
@@ -67,6 +80,13 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QxtSpanSlider</class>
+   <extends>QSlider</extends>
+   <header>QxtSpanSlider.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

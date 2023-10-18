@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="QxtSpanSlider.cpp" />
     <QtRcc Include="QT_Mark.qrc" />
     <QtUic Include="ImageProcessInterface.ui" />
     <QtUic Include="QT_Mark.ui" />
@@ -131,6 +132,8 @@
     <ClInclude Include="Def.h" />
     <ClInclude Include="ImageConvert.h" />
     <QtMoc Include="ImageProcessInterface.h" />
+    <QtMoc Include="QxtSpanSlider.h" />
+    <QtMoc Include="QxtSpanSlider_p.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
