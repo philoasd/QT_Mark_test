@@ -152,6 +152,7 @@ void QT_Mark::DisconnectedCamera()
 void QT_Mark::InitImageProcessLibrary()
 {
 	m_ImageProcess = new MatroxLibrary();
+	m_ImageProcess->SetDispMode(MatroxLibrary::QT);
 }
 
 void QT_Mark::GetImageSignalFromChildInterface(int flag)

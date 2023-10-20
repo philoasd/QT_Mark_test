@@ -100,8 +100,9 @@ void ImageProcessInterface::InitConnect()
 
 void ImageProcessInterface::GetImageFromMainWindow(QVariant _PtrGrabResult)
 {
-	Pylon::CGrabResultPtr ptrGrabResult = _PtrGrabResult.value<Pylon::CGrabResultPtr>();
-	PtrGrabResult = ptrGrabResult;
-	QImage img = ImageConvert::ConvertToQImage(ptrGrabResult); // 将Basler图像原始数据转换为QImage
-	ui.label_ImageProcess->setPixmap(QPixmap::fromImage(img).scaled(ui.label_ImageProcess->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+	//Pylon::CGrabResultPtr ptrGrabResult = _PtrGrabResult.value<Pylon::CGrabResultPtr>();
+	//PtrGrabResult = ptrGrabResult;
+	//QImage img = ImageConvert::ConvertToQImage(ptrGrabResult); // 将Basler图像原始数据转换为QImage
+	//ui.label_ImageProcess->setPixmap(QPixmap::fromImage(img).scaled(ui.label_ImageProcess->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+
 }

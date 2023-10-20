@@ -8,6 +8,15 @@
 #include <QMetaType>
 #include <QVariant>
 
+#include "Def.h"
+#if DALSA
+#include <DalsaLibrary.h>
+#elif MATROX
+#include <MatroxLibrary.h>
+#elif OPENCV
+#include <OpenCVLibrary.h>
+#endif
+
 Q_DECLARE_METATYPE(Pylon::CGrabResultPtr)
 
 class ImageProcessInterface : public QWidget
@@ -37,6 +46,14 @@ public slots:
 private:
 	Ui::ImageProcessInterfaceClass ui;
 	Pylon::CGrabResultPtr PtrGrabResult; // 用于接收主界面传递过来的图像,作为当前界面公用的图像
+
+#if DALSA
+	DalsaLibrary* ImageProcess = nullptr;
+#elif MATROX
+	MatroxLibrary* ImageProcess = nullptr;
+#elif OPENCV
+	OpenCVLibrary* ImageProcess = nullptr;
+#endif
 public:
 	bool IsShowing = false; // 是否打开了界面
 };
