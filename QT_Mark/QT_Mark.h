@@ -70,10 +70,19 @@ private:
 	void InitImageProcessLibrary();
 #pragma endregion
 
-private slots:
+signals:
+	/// <summary>
+	/// 将图像传递给子界面
+	/// </summary>
+	void SendImageToChildInterface(QVariant ptrGrabResult);
+
+public slots:
+	void GetImageSignalFromChildInterface(int flag);
 
 private:
 	Ui::QT_MarkClass ui;
+	ImageProcessInterface* imageProcessInterface;// 图像处理界面
+
 	BaslerCamera* m_Camera = nullptr;				  // 相机对象
 	ImageEventHandler::ImageCallback callback;		  // 图像回调函数
 	ImageEventHandler* m_ImageEventHandler = nullptr; // 图像回调对象

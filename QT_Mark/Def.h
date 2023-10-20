@@ -1,4 +1,8 @@
-#pragma once
+﻿#pragma once
+
+/*
+一些宏定义
+*/
 
 #pragma region Image Process Library
 #define DALSA 0

@@ -11,6 +11,8 @@ QT_Mark::QT_Mark(QWidget* parent)
 
 QT_Mark::~QT_Mark()
 {
+	delete m_ImageProcess;
+	delete imageProcessInterface;
 }
 
 void QT_Mark::InitCameraDevices()
@@ -34,6 +36,8 @@ void QT_Mark::InitControl()
 #pragma endregion
 
 	ui.actionGrabStop->setEnabled(false); // 停止取图按钮不可用
+
+	
 }
 
 void QT_Mark::InitConnect()
@@ -85,7 +89,9 @@ void QT_Mark::InitConnect()
 		});
 	// 单次取图
 	connect(ui.actionGrabOnce, &QAction::triggered, this, [&]()
-		{ m_Camera->StartCapture(0); });
+		{
+			m_Camera->StartCapture(0);
+		});
 	// 停止取图
 	connect(ui.actionGrabStop, &QAction::triggered, this, [&]()
 		{
@@ -97,8 +103,12 @@ void QT_Mark::InitConnect()
 	// 打开图像处理界面
 	connect(ui.actionImageProcessInterface, &QAction::triggered, this, [&]()
 		{
-			ImageProcessInterface* imageProcessInterface = new ImageProcessInterface();
+			imageProcessInterface = new ImageProcessInterface();
 			imageProcessInterface->show();
+			imageProcessInterface->IsShowing = true;
+
+			connect(imageProcessInterface, &ImageProcessInterface::SendGetImageSignal, this, &QT_Mark::GetImageSignalFromChildInterface);
+			connect(this, &QT_Mark::SendImageToChildInterface, imageProcessInterface, &ImageProcessInterface::GetImageFromMainWindow); // 发送图像给子界面
 		});
 #pragma endregion
 }
@@ -109,6 +119,9 @@ void QT_Mark::ShowImage(const CGrabResultPtr& ptrGrabResult)
 	{
 		QImage img = ImageConvert::ConvertToQImage(ptrGrabResult); // 将Basler图像原始数据转换为QImage
 		ui.label_ShowImage->setPixmap(QPixmap::fromImage(img).scaled(ui.label_ShowImage->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+		if (imageProcessInterface != nullptr) {
+			emit SendImageToChildInterface(QVariant::fromValue(ptrGrabResult)); // 发送图像给子界面
+		}
 	}
 }
 
@@ -139,4 +152,23 @@ void QT_Mark::DisconnectedCamera()
 void QT_Mark::InitImageProcessLibrary()
 {
 	m_ImageProcess = new MatroxLibrary();
+}
+
+void QT_Mark::GetImageSignalFromChildInterface(int flag)
+{
+	switch (flag)
+	{
+	case 0: {
+		ui.actionGrabOnce->triggered();
+		break;
+		}
+	case 1: {
+		ui.actionGrabContinue->triggered();
+		break;
+	}
+	default: {
+		ui.actionGrabStop->triggered();
+		break;
+	}
+	}
 }
