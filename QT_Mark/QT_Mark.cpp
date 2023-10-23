@@ -11,8 +11,10 @@ QT_Mark::QT_Mark(QWidget* parent)
 
 QT_Mark::~QT_Mark()
 {
-	delete m_ImageProcess;
-	delete imageProcessInterface;
+	if(m_ImageProcess==nullptr)
+		delete m_ImageProcess;
+	if(imageProcessInterface == nullptr)
+		delete imageProcessInterface;
 }
 
 void QT_Mark::InitCameraDevices()
@@ -37,7 +39,7 @@ void QT_Mark::InitControl()
 
 	ui.actionGrabStop->setEnabled(false); // 停止取图按钮不可用
 
-	
+
 }
 
 void QT_Mark::InitConnect()
@@ -104,8 +106,9 @@ void QT_Mark::InitConnect()
 	connect(ui.actionImageProcessInterface, &QAction::triggered, this, [&]()
 		{
 			imageProcessInterface = new ImageProcessInterface();
-			imageProcessInterface->show();
-			imageProcessInterface->IsShowing = true;
+			imageProcessInterface->show(); // 显示图像处理界面
+			imageProcessInterface->IsShowing = true; // 设置图像处理界面正在显示
+			imageProcessInterface->ImageProcess = m_ImageProcess; // 将图像处理库传递给图像处理界面
 
 			connect(imageProcessInterface, &ImageProcessInterface::SendGetImageSignal, this, &QT_Mark::GetImageSignalFromChildInterface);
 			connect(this, &QT_Mark::SendImageToChildInterface, imageProcessInterface, &ImageProcessInterface::GetImageFromMainWindow); // 发送图像给子界面
@@ -152,7 +155,7 @@ void QT_Mark::DisconnectedCamera()
 void QT_Mark::InitImageProcessLibrary()
 {
 	m_ImageProcess = new MatroxLibrary();
-	m_ImageProcess->SetDispMode(MatroxLibrary::QT);
+	m_ImageProcess->SetDispMode(MatroxLibrary::QT); // 设置显示模式为QT
 }
 
 void QT_Mark::GetImageSignalFromChildInterface(int flag)
@@ -162,7 +165,7 @@ void QT_Mark::GetImageSignalFromChildInterface(int flag)
 	case 0: {
 		ui.actionGrabOnce->triggered();
 		break;
-		}
+	}
 	case 1: {
 		ui.actionGrabContinue->triggered();
 		break;

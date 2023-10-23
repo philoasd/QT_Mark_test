@@ -5,12 +5,12 @@ MatroxLibrary::MatroxLibrary()
 {
 	MilApplication = MappAlloc(M_NULL, M_DEFAULT, M_UNIQUE_ID);
 	MilSystem = MsysAlloc(MilApplication, MIL_TEXT("M_SYSTEM_HOST"), M_DEFAULT, M_DEFAULT, M_UNIQUE_ID);
-	MilDisplay = MdispAlloc(MilSystem, M_DEFAULT, MIL_TEXT("M_DEFAULT"), M_DEFAULT, M_UNIQUE_ID);
+	MilDisplay = MdispAlloc(MilSystem, M_DEFAULT, MIL_TEXT("M_DEFAULT"), M_WINDOWED, M_UNIQUE_ID);
 }
 
 MatroxLibrary::~MatroxLibrary()
 {
-	MosGetch();
+
 }
 
 void MatroxLibrary::SetDispMode(DispMode mode)
@@ -35,7 +35,17 @@ void MatroxLibrary::SetDispMode(DispMode mode)
 	}
 }
 
-void MatroxLibrary::ShowImage(MIL_ID img, MIL_WINDOW_HANDLE handle)
+void MatroxLibrary::ShowImage(MIL_ID& img, MIL_WINDOW_HANDLE handle)
 {
 	MdispSelectWindow(MilDisplay, img, handle);
+}
+
+void MatroxLibrary::ShowImage(MIL_ID& img)
+{
+	MdispSelect(MilDisplay, img);
+}
+
+void MatroxLibrary::SaveImage(std::string& path, MIL_ID img)
+{
+	//MbufSave(path.c_str(), img); //todo: bug
 }

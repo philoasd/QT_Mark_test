@@ -64,7 +64,7 @@ double DalsaLibrary::GetMinScore(CProSearchEdge& search) const
 
 void DalsaLibrary::SetMinContrast(double minContrast, CProSearchEdge& search)
 {
-	
+
 }
 
 double DalsaLibrary::GetMinContrast(CProSearchEdge& search) const
@@ -76,4 +76,10 @@ void DalsaLibrary::Execute(CProImage& img, CProSearchEdge& search)
 {
 	search.Execute(img);
 }
+
 #pragma endregion
+
+void DalsaLibrary::SaveImage(std::string& path, CProImage& img)
+{
+	img.Save(path.c_str(), CProImage::FileBmp);
+}

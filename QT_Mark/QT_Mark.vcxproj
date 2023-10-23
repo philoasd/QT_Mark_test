@@ -58,6 +58,7 @@
     <Import Project="..\..\..\property manager files\DALSA.props" />
     <Import Project="..\..\..\property manager files\MIL.props" />
     <Import Project="..\..\..\property manager files\opencv.props" />
+    <Import Project="..\..\..\property manager files\Halcon.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />

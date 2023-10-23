@@ -99,5 +99,12 @@ public:
 	/// <param name="search"></param>
 	void Execute(CProImage& img, CProSearchEdge& search);
 #pragma endregion
+
+	/// <summary>
+	/// 保存图像
+	/// </summary>
+	/// <param name="path"></param>
+	/// <param name="img"></param>
+	void SaveImage(std::string& path, CProImage& img);
 };
 

@@ -51,3 +51,24 @@ QImage ImageConvert::ConvertMatToQImage(const cv::Mat& mat)
 		return QImage();
 	}
 }
+
+MIL_ID ImageConvert::ConvertToMilImage(const Pylon::CGrabResultPtr& ptrGrabResult, MIL_ID MilSystem)
+{
+	MIL_ID milImage;
+
+	MbufAlloc2d(MilSystem, ptrGrabResult->GetWidth(), ptrGrabResult->GetHeight(), 8 + M_UNSIGNED, M_IMAGE + M_PROC + M_DISP, &milImage);
+	MbufPut2d(milImage, 0, 0, ptrGrabResult->GetWidth(), ptrGrabResult->GetHeight(), ptrGrabResult->GetBuffer());
+
+	return milImage;
+}
+
+MIL_ID ImageConvert::ConvertMatToMilImage(const cv::Mat& mat, MIL_ID MilSystem)
+{
+	cv::cvtColor(mat, mat, cv::COLOR_BGR2GRAY);
+	MIL_ID milImage;
+
+	MbufAlloc2d(MilSystem, mat.cols, mat.rows, 8 + M_UNSIGNED, M_IMAGE + M_PROC + M_DISP, &milImage);
+	MbufPut2d(milImage, 0, 0, mat.cols, mat.rows, mat.data);
+
+	return milImage;
+}
