@@ -39,6 +39,21 @@
        <property name="frameShadow">
         <enum>QFrame::Plain</enum>
        </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_ImageProcess">
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </item>
      <item>
@@ -207,25 +222,6 @@
              </layout>
             </item>
            </layout>
-          </widget>
-          <widget class="QLabel" name="label_ImageProcess">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>230</y>
-             <width>201</width>
-             <height>211</height>
-            </rect>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::NoFrame</enum>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
           </widget>
          </widget>
          <widget class="QWidget" name="tab_Calibration">

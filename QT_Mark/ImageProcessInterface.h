@@ -15,6 +15,8 @@
 #include <MatroxLibrary.h>
 #elif OPENCV
 #include <OpenCVLibrary.h>
+#elif HALCON
+#include <HalconLibrary.h>
 #endif
 
 Q_DECLARE_METATYPE(Pylon::CGrabResultPtr)
@@ -56,5 +58,7 @@ public:
 	MatroxLibrary* ImageProcess = nullptr;
 #elif OPENCV
 	OpenCVLibrary* ImageProcess = nullptr;
+#elif HALCON
+	HalconLibrary* ImageProcess = nullptr;
 #endif
 };

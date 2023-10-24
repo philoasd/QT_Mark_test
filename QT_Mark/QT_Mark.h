@@ -12,6 +12,8 @@
 #include <MatroxLibrary.h>
 #elif OPENCV
 #include <OpenCVLibrary.h>
+#elif HALCON
+#include <HalconLibrary.h>
 #endif
 
 #include "ImageConvert.h"
@@ -94,6 +96,8 @@ private:
 	MatroxLibrary* m_ImageProcess = nullptr;			  // 图像处理对象
 #elif OPENCV
 	OpenCVLibrary* m_ImageProcess = nullptr;			  // 图像处理对象
+#elif HALCON
+	HalconLibrary* m_ImageProcess = nullptr;			  // 图像处理对象
 #endif
 
 };

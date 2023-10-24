@@ -78,6 +78,8 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\..\..\property manager files\DALSA.props" />
     <Import Project="..\..\..\property manager files\MIL.props" />
+    <Import Project="..\..\..\property manager files\HalconRelease.props" />
+    <Import Project="..\..\..\property manager files\OpenCVRelease.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

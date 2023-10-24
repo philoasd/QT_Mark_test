@@ -72,3 +72,13 @@ MIL_ID ImageConvert::ConvertMatToMilImage(const cv::Mat& mat, MIL_ID MilSystem)
 
 	return milImage;
 }
+
+HalconCpp::HObject ImageConvert::ConvertToHalconImage(const Pylon::CGrabResultPtr& ptrGrabResult)
+{
+	HalconCpp::HObject halconImage;
+	HalconCpp::HTuple width, height;
+	width = (int)ptrGrabResult->GetWidth();
+	height = (int)ptrGrabResult->GetHeight();
+	HalconCpp::GenImage1(&halconImage, "byte", width, height, (Hlong)ptrGrabResult->GetBuffer());
+	return halconImage;
+}

@@ -105,11 +105,19 @@ void ImageProcessInterface::GetImageFromMainWindow(QVariant _PtrGrabResult)
 	//PtrGrabResult = ptrGrabResult;
 	//QImage img = ImageConvert::ConvertToQImage(ptrGrabResult); // 将Basler图像原始数据转换为QImage
 	//ui.label_ImageProcess->setPixmap(QPixmap::fromImage(img).scaled(ui.label_ImageProcess->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
-	auto img = ImageConvert::ConvertToMilImage(ptrGrabResult, ImageProcess->MilSystem);
+
+	/*auto img = ImageConvert::ConvertToMilImage(ptrGrabResult, ImageProcess->MilSystem);
 	if (IsShowing) {
 		ImageProcess->ShowImage(img, (MIL_WINDOW_HANDLE)ui.frame->winId());
-        
+
 		std::string path = "test.bmp";
 		ImageProcess->SaveImage(path, img);
+	}*/
+
+	auto img = ImageConvert::ConvertToHalconImage(ptrGrabResult);
+	if (IsShowing) {
+		int width = ui.label_ImageProcess->width();
+		int height = ui.label_ImageProcess->height();
+		ImageProcess->ShowImage(img, (Hlong)(ui.label_ImageProcess->winId()), width, height);
 	}
 }

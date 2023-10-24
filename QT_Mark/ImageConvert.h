@@ -4,6 +4,7 @@
 #include <CPro.h>
 #include <opencv2/opencv.hpp>
 #include <Mil.h>
+#include <halconcpp/HalconCpp.h>
 
 /// <summary>
 /// 图像转换类
@@ -45,4 +46,11 @@ public:
 	/// <param name="mat"></param>
 	/// <returns></returns>
 	static MIL_ID ConvertMatToMilImage(const cv::Mat& mat, MIL_ID MilSystem);
+
+	/// <summary>
+	/// 将图像转换为Halcon图像
+	/// </summary>
+	/// <param name="ptrGrabResult"></param>
+	/// <returns></returns>
+	static HalconCpp::HObject ConvertToHalconImage(const Pylon::CGrabResultPtr& ptrGrabResult);
 };

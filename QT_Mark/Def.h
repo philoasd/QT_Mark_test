@@ -6,8 +6,9 @@
 
 #pragma region Image Process Library
 #define DALSA 0
-#define MATROX 1
+#define MATROX 0
 #define OPENCV 0
+#define HALCON 1
 #pragma endregion
 
 #pragma region Camera Library
