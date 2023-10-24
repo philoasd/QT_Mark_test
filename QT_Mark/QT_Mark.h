@@ -4,7 +4,9 @@
 #include "ui_QT_Mark.h"
 #include "Def.h"
 
+#if BASLER
 #include <BaslerCamera.h>
+#endif
 
 #if DALSA
 #include <DalsaLibrary.h>

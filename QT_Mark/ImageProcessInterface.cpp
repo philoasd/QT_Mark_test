@@ -102,22 +102,26 @@ void ImageProcessInterface::InitConnect()
 void ImageProcessInterface::GetImageFromMainWindow(QVariant _PtrGrabResult)
 {
 	Pylon::CGrabResultPtr ptrGrabResult = _PtrGrabResult.value<Pylon::CGrabResultPtr>();
-	//PtrGrabResult = ptrGrabResult;
-	//QImage img = ImageConvert::ConvertToQImage(ptrGrabResult); // 将Basler图像原始数据转换为QImage
-	//ui.label_ImageProcess->setPixmap(QPixmap::fromImage(img).scaled(ui.label_ImageProcess->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+	PtrGrabResult = ptrGrabResult; // 保存一份副本备用
+	//ptrGrabResult.Release(); // 释放指针
 
-	/*auto img = ImageConvert::ConvertToMilImage(ptrGrabResult, ImageProcess->MilSystem);
+#if MATROX // 使用Matrox显示
+	auto img = ImageConvert::ConvertToMilImage(ptrGrabResult, ImageProcess->MilSystem);
 	if (IsShowing) {
 		ImageProcess->ShowImage(img, (MIL_WINDOW_HANDLE)ui.frame->winId());
 
 		std::string path = "test.bmp";
 		ImageProcess->SaveImage(path, img);
-	}*/
-
+	}
+#elif HALCON // 使用Halcon显示
 	auto img = ImageConvert::ConvertToHalconImage(ptrGrabResult);
 	if (IsShowing) {
 		int width = ui.label_ImageProcess->width();
 		int height = ui.label_ImageProcess->height();
 		ImageProcess->ShowImage(img, (Hlong)(ui.label_ImageProcess->winId()), width, height);
 	}
+#else // 默认使用Qt显示
+	QImage img = ImageConvert::ConvertToQImage(ptrGrabResult); // 将Basler图像原始数据转换为QImage
+	ui.label_ImageProcess->setPixmap(QPixmap::fromImage(img).scaled(ui.label_ImageProcess->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+#endif
 }

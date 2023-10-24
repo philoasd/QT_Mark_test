@@ -12,5 +12,5 @@
 #pragma endregion
 
 #pragma region Camera Library
-#define Basler 1
+#define BASLER 1
 #pragma endregion
