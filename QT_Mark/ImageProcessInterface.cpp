@@ -120,6 +120,8 @@ void ImageProcessInterface::GetImageFromMainWindow(QVariant _PtrGrabResult)
 		int height = ui.label_ImageProcess->height();
 		ImageProcess->ShowImage(img, (Hlong)(ui.label_ImageProcess->winId()), width, height);
 	}
+#elif DALSA // 使用Dalsa显示
+	
 #else // 默认使用Qt显示
 	QImage img = ImageConvert::ConvertToQImage(ptrGrabResult); // 将Basler图像原始数据转换为QImage
 	ui.label_ImageProcess->setPixmap(QPixmap::fromImage(img).scaled(ui.label_ImageProcess->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));

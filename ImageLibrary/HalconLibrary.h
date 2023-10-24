@@ -14,7 +14,7 @@ public:
 	/// <param name="winID">窗口控件</param>
 	/// <param name="width">图像宽度</param>
 	/// <param name="height">图像高度</param>
-	void ShowImage(const HObject& image, Hlong winID, int imgWidth, int imgHeight);
+	void ShowImage(const HObject& image, Hlong winID, int uiWidth, int uiHeight);
 
 private:
 	HTuple windowHandle;// 显示窗口句柄
