@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <CPro.h>
 #include <CProSearch.h>
+#include <CProBasic.h>
 #include <string>
 
 /// <summary>
@@ -9,6 +10,9 @@
 class __declspec(dllexport) DalsaLibrary
 {
 public:
+	DalsaLibrary();
+	~DalsaLibrary();
+
 #pragma region Search edge
 	/// <summary>
 	/// 训练模板
@@ -106,5 +110,35 @@ public:
 	/// <param name="path"></param>
 	/// <param name="img"></param>
 	void SaveImage(std::string& path, CProImage& img);
+
+	/// <summary>
+	/// 开闭运算的核
+	/// </summary>
+	enum OpenOrCloseKernel
+	{
+		Rectangle,
+		Arbitrary
+	};
+
+	/// <summary>
+	/// 开运算
+	/// </summary>
+	/// <param name="img">图像</param>
+	/// <param name="kernel">内核方式</param>
+	/// <param name="kernelWidth">内核宽</param>
+	/// <param name="kernelHeight">内核高</param>
+	void Opening(CProImage& img, OpenOrCloseKernel kernel, int kernelWidth, int kernelHeight);
+
+	/// <summary>
+	/// 闭运算
+	/// </summary>
+	/// <param name="img">图像</param>
+	/// <param name="kernel">内核方式</param>
+	/// <param name="kernelWidth">内核宽</param>
+	/// <param name="kernelHeight">内核高</param>
+	void Closing(CProImage& img, OpenOrCloseKernel kernel, int kernelWidth, int kernelHeight);
+
+private:
+	CProBasic* m_Basic = nullptr;
 };
 

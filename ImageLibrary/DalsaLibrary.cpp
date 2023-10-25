@@ -2,6 +2,10 @@
 #include "DalsaLibrary.h"
 
 #pragma region Search edge
+DalsaLibrary::DalsaLibrary()
+{
+	m_Basic = new CProBasic();
+}
 void DalsaLibrary::TrainModel(CProImage& img, CProRect& rect, std::string& modelName, CProSearchEdge& search)
 {
 	// 复制一份，避免修改原图
@@ -82,4 +86,24 @@ void DalsaLibrary::Execute(CProImage& img, CProSearchEdge& search)
 void DalsaLibrary::SaveImage(std::string& path, CProImage& img)
 {
 	img.Save(path.c_str(), CProImage::FileBmp);
+}
+
+void DalsaLibrary::Opening(CProImage& img, OpenOrCloseKernel kernel, int kernelWidth, int kernelHeight)
+{
+	if (kernel == OpenOrCloseKernel::Rectangle) {
+		m_Basic->Open(img, img, CProBasic::OutputGrayScale, CProBasic::KernelRectangular, kernelWidth, kernelHeight);
+	}
+	else {
+		m_Basic->Open(img, img, CProBasic::OutputGrayScale, CProBasic::KernelArbitrary, kernelWidth, kernelHeight);
+	}
+}
+
+void DalsaLibrary::Closing(CProImage& img, OpenOrCloseKernel kernel, int kernelWidth, int kernelHeight)
+{
+	if (kernel == OpenOrCloseKernel::Rectangle) {
+		m_Basic->Close(img, img, CProBasic::OutputGrayScale, CProBasic::KernelRectangular, kernelWidth, kernelHeight);
+	}
+	else {
+		m_Basic->Close(img, img, CProBasic::OutputGrayScale, CProBasic::KernelArbitrary, kernelWidth, kernelHeight);
+	}
 }
