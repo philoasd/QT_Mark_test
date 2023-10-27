@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\include\Opencv;..\include\Matrox;..\include\Halcon;..\include\Dalsa</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>..\lib\Opencv\x64;..\lib\Matrox\x64;..\lib\Halcon\x64;..\lib\Dalsa\x64;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>CPro.lib;CPro3d.lib;CProBarcode.lib;CProBlob.lib;CProCalib.lib;CProColor.lib;CProMeasurement.lib;CProOcr.lib;CProSearch.lib;halcon.lib;halconc.lib;halconcpp.lib;halconcppxl.lib;halconcxl.lib;halconxl.lib;hdevenginecpp.lib;hdevenginecppxl.lib;libiomp5md.lib;mil.lib;Mil3d.lib;mil3dblob.lib;mil3dim.lib;Mil3dmap.lib;mil3dmet.lib;mil3dmod.lib;mil3dreg.lib;Milbead.lib;milblob.lib;milcal.lib;milclass.lib;milcode.lib;milcolor.lib;milcom.lib;mildmr.lib;miledge.lib;milfpga.lib;Milim.lib;milmeas.lib;Milmetrol.lib;milmod.lib;milocr.lib;milpat.lib;Milreg.lib;MilStr.lib;milwebclient.lib;opencv_world460.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>

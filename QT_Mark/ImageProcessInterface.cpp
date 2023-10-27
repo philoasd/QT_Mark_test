@@ -76,11 +76,13 @@ void ImageProcessInterface::InitConnect()
 	connect(ui.pushButton_GetContinueImage, &QPushButton::clicked, this, [&]() {
 		ui.pushButton_GrabStop->setVisible(true);
 		ui.pushButton_GetContinueImage->setVisible(false);
+		ui.pushButton_GetOneImage->setEnabled(false);
 		emit SendGetImageSignal(1); // 发送获取图像信号给主界面
 		});
 	connect(ui.pushButton_GrabStop, &QPushButton::clicked, this, [&]() {
 		ui.pushButton_GrabStop->setVisible(false);
 		ui.pushButton_GetContinueImage->setVisible(true);
+		ui.pushButton_GetOneImage->setEnabled(true);
 		emit SendGetImageSignal(2); // 发送停止图像信号给主界面
 		});
 #pragma endregion

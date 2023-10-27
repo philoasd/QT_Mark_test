@@ -13,4 +13,11 @@
         <file>icon/grab_continue.ico</file>
         <file>icon/image_process.ico</file>
     </qresource>
+    <qresource prefix="/draw">
+        <file>icon/circle.png</file>
+        <file>icon/curve.png</file>
+        <file>icon/ellipse.png</file>
+        <file>icon/line.png</file>
+        <file>icon/polygon.png</file>
+    </qresource>
 </RCC>

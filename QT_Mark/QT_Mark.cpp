@@ -38,8 +38,6 @@ void QT_Mark::InitControl()
 #pragma endregion
 
 	ui.actionGrabStop->setEnabled(false); // 停止取图按钮不可用
-
-
 }
 
 void QT_Mark::InitConnect()
@@ -107,6 +105,7 @@ void QT_Mark::InitConnect()
 		{
 			imageProcessInterface = new ImageProcessInterface();
 			imageProcessInterface->ImageProcess = m_ImageProcess; // 将图像处理库传递给图像处理界面
+			imageProcessInterface->setWindowModality(Qt::ApplicationModal);// 设置为模态窗口
 			imageProcessInterface->show(); // 显示图像处理界面
 			imageProcessInterface->IsShowing = true; // 设置图像处理界面正在显示
 

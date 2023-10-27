@@ -6,6 +6,9 @@ DalsaLibrary::DalsaLibrary()
 {
 	m_Basic = new CProBasic();
 }
+DalsaLibrary::~DalsaLibrary()
+{
+}
 void DalsaLibrary::TrainModel(CProImage& img, CProRect& rect, std::string& modelName, CProSearchEdge& search)
 {
 	// 复制一份，避免修改原图

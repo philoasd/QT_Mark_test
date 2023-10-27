@@ -49,7 +49,7 @@
          <enum>QFrame::Box</enum>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="page">
          <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -174,26 +174,6 @@
    <addaction name="actionMark"/>
    <addaction name="actionVision"/>
   </widget>
-  <widget class="QToolBar" name="toolBar_Shape">
-   <property name="focusPolicy">
-    <enum>Qt::NoFocus</enum>
-   </property>
-   <property name="windowTitle">
-    <string>toolBar_Shape</string>
-   </property>
-   <property name="layoutDirection">
-    <enum>Qt::LeftToRight</enum>
-   </property>
-   <property name="allowedAreas">
-    <set>Qt::AllToolBarAreas</set>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-  </widget>
   <widget class="QStatusBar" name="statusBar">
    <property name="font">
     <font>
@@ -218,6 +198,22 @@
    <addaction name="actionGrabOnce"/>
    <addaction name="actionGrabStop"/>
    <addaction name="actionImageProcessInterface"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar_Shape">
+   <property name="windowTitle">
+    <string>toolBar_2</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionDrawLine"/>
+   <addaction name="actionDrawCircle"/>
+   <addaction name="actionDrawEllipse"/>
+   <addaction name="actionDrawCurve"/>
+   <addaction name="actionDrawPolygon"/>
   </widget>
   <action name="actionNew">
    <property name="text">
@@ -374,6 +370,66 @@
    </property>
    <property name="toolTip">
     <string>Open the image process interface</string>
+   </property>
+  </action>
+  <action name="actionDrawLine">
+   <property name="icon">
+    <iconset resource="QT_Mark.qrc">
+     <normaloff>:/draw/icon/line.png</normaloff>:/draw/icon/line.png</iconset>
+   </property>
+   <property name="text">
+    <string>DrawLine</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw a line</string>
+   </property>
+  </action>
+  <action name="actionDrawCircle">
+   <property name="icon">
+    <iconset resource="QT_Mark.qrc">
+     <normaloff>:/draw/icon/circle.png</normaloff>:/draw/icon/circle.png</iconset>
+   </property>
+   <property name="text">
+    <string>DrawCircle</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw a circle</string>
+   </property>
+  </action>
+  <action name="actionDrawEllipse">
+   <property name="icon">
+    <iconset resource="QT_Mark.qrc">
+     <normaloff>:/draw/icon/ellipse.png</normaloff>:/draw/icon/ellipse.png</iconset>
+   </property>
+   <property name="text">
+    <string>DrawEllipse</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw a ellipse</string>
+   </property>
+  </action>
+  <action name="actionDrawCurve">
+   <property name="icon">
+    <iconset resource="QT_Mark.qrc">
+     <normaloff>:/draw/icon/curve.png</normaloff>:/draw/icon/curve.png</iconset>
+   </property>
+   <property name="text">
+    <string>DrawCurve</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw a curve</string>
+   </property>
+  </action>
+  <action name="actionDrawPolygon">
+   <property name="icon">
+    <iconset resource="QT_Mark.qrc">
+     <normaloff>:/draw/icon/polygon.png</normaloff>:/draw/icon/polygon.png</iconset>
+   </property>
+   <property name="text">
+    <string>DrawPolygon</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw a polygon</string>
    </property>
   </action>
  </widget>
